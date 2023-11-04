@@ -18,22 +18,56 @@ AUTORES: [Nomes inseridos de acordo com os contribuidores] Sammuel G Martins
 DATA: 02/11/2023 - xx/xx/xxxx
 */
 const faker = require('faker'); // Biblioteca para gerar dados sintéticos. É necessário intalar a biblioteca com o comando "npm install faker". 
+// Importe o módulo 'hashmap'
+const HashMap = require('hashmap');
 
 // Função para gerar dados sintéticos.
 function gerarDadosSinteticos(qtdDados) {
-    const dadosGerados = [];
+    const dadosSinteticos = [];
 
     for (let i = 0; i < qtdDados; i++) {
-        const sensorA = faker.random.number({ min: 0, max: 1 }); // Dado do sensor 1 (0 ou 1)
-        const sensorB = faker.random.number({ min: 0, max: 1 }); // Dado do sensor 2 (0 ou 1)
-        const sensorC = faker.random.number({ min: 0, max: 1 }); // Dado do sensor 3 (0 ou 1)
-        const sensorD = faker.random.number({ min: 0, max: 1 }); // Dado do sensor 4 (0 ou 1)
-        const sensorE = faker.random.number({ min: 0, max: 1 }); // Dado do sensor 5 (0 ou 1)
-        dadosGerados.push([sensorA, sensorB, sensorC, sensorD, sensorE]);
+        const sensorA = faker.random.number({ min: 0, max: 1 }); // Dado do sensor A (0 ou 1)
+        const sensorB = faker.random.number({ min: 0, max: 1 }); // Dado do sensor B (0 ou 1)
+        const sensorC = faker.random.number({ min: 0, max: 1 }); // Dado do sensor C (0 ou 1)
+        const sensorD = faker.random.number({ min: 0, max: 1 }); // Dado do sensor D (0 ou 1)
+        const sensorE = faker.random.number({ min: 0, max: 1 }); // Dado do sensor E (0 ou 1)
+        dadosSinteticos.push([sensorA, sensorB, sensorC, sensorD, sensorE]);
     }
-    return dadosGerados;
+    return dadosSinteticos;
 }
 
-const dadosSinteticos = gerarDadosSinteticos(1);
+// Função para tratar os dados sintéticos gerados. 
+function tratamentoDados(dados) {
+    let dadosTratados = new HashMap();
+    let alf = ['A', 'B', 'C', 'D', 'E'];
 
-console.log(dadosSinteticos);
+    for (let i = 0; i < alf.length; i++) {
+        let chave = alf[i];
+        let valor = dados[i];
+        dadosTratados.set(chave, valor);
+    }
+
+    // imprime os dados tratados
+    console.log('Dados tratados: ');
+    dadosTratados.forEach((valor, chave) => {
+        console.log(`Sensor ${chave} = ${valor}`);
+    });
+
+
+    return dadosTratados;
+}
+
+
+// Função para apresentar os dados. A função apresenta os dados para desenvolvedores.
+function apresentarDados(dados) {
+    console.log('Dados tratados: ');
+    dados.forEach((valor, chave) => {
+        console.log(`Sensor ${chave} = ${valor}`);
+    });
+}
+
+//--------------------------------------------------------------\\
+// Código principal
+const dadosSinteticos = gerarDadosSinteticos(1);
+const dadosTratados = tratamentoDados(dadosSinteticos);
+//apresentarDados(dadosTratados);
