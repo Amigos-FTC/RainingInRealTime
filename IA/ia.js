@@ -14,60 +14,32 @@ As previsões são então disponibilizadas em uma plataforma web para acesso dos
 Este código é parte de um projeto mais amplo chamado "RRT - Rain in Real Time", que visa melhorar a segurança, eficiência e qualidade de vida da usuários, fornecendo informações climáticas precisas e em tempo real. 
 A implementação de inteligência artificial é fundamental para alcançar esse objetivo e proporcionar inclusão digital no cotidiano das pessoas.
 
-AUTORES: [Nomes inseridos de acordo com os contribuidores] Sammuel G Martins
 DATA: 02/11/2023 - xx/xx/xxxx
 */
-const faker = require('faker'); // Biblioteca para gerar dados sintéticos. É necessário intalar a biblioteca com o comando "npm install faker". 
+// Biblioteca para gerar dados sintéticos. É necessário intalar a biblioteca com o comando "npm install faker". 
+const faker = require('faker');
 // Importe o módulo 'hashmap'
 const HashMap = require('hashmap');
 
 // Função para gerar dados sintéticos.
-function gerarDadosSinteticos(qtdDados) {
-    const dadosSinteticos = [];
-
-    for (let i = 0; i < qtdDados; i++) {
-        const sensorA = faker.random.number({ min: 0, max: 1 }); // Dado do sensor A (0 ou 1)
-        const sensorB = faker.random.number({ min: 0, max: 1 }); // Dado do sensor B (0 ou 1)
-        const sensorC = faker.random.number({ min: 0, max: 1 }); // Dado do sensor C (0 ou 1)
-        const sensorD = faker.random.number({ min: 0, max: 1 }); // Dado do sensor D (0 ou 1)
-        const sensorE = faker.random.number({ min: 0, max: 1 }); // Dado do sensor E (0 ou 1)
-        dadosSinteticos.push([sensorA, sensorB, sensorC, sensorD, sensorE]);
-    }
+function gerarDadosSinteticos() {
+    const dadosSinteticos = new HashMap();
+    dadosSinteticos.set('A', faker.random.number({ min: 0, max: 1 })) // Dado do sensor A (0 ou 1)
+    dadosSinteticos.set('B', faker.random.number({ min: 0, max: 1 })) // Dado do sensor B (0 ou 1)
+    dadosSinteticos.set('C', faker.random.number({ min: 0, max: 1 })) // Dado do sensor C (0 ou 1)
+    dadosSinteticos.set('D', faker.random.number({ min: 0, max: 1 })) // Dado do sensor D (0 ou 1)
+    dadosSinteticos.set('E', faker.random.number({ min: 0, max: 1 })) // Dado do sensor E (0 ou 1)
     return dadosSinteticos;
 }
 
-// Função para tratar os dados sintéticos gerados. 
-function tratamentoDados(dados) {
-    let dadosTratados = new HashMap();
-    let alf = ['A', 'B', 'C', 'D', 'E'];
-
-    for (let i = 0; i < alf.length; i++) {
         let chave = alf[i];
-        let valor = dados[i];
-        dadosTratados.set(chave, valor);
-    }
-
-    // imprime os dados tratados
-    console.log('Dados tratados: ');
-    dadosTratados.forEach((valor, chave) => {
-        console.log(`Sensor ${chave} = ${valor}`);
-    });
-
-
-    return dadosTratados;
-}
-
-
 // Função para apresentar os dados. A função apresenta os dados para desenvolvedores.
 function apresentarDados(dados) {
-    console.log('Dados tratados: ');
-    dados.forEach((valor, chave) => {
-        console.log(`Sensor ${chave} = ${valor}`);
-    });
+    console.log('Sensor: ', dados);
 }
 
 //--------------------------------------------------------------\\
 // Código principal
-const dadosSinteticos = gerarDadosSinteticos(1);
-const dadosTratados = tratamentoDados(dadosSinteticos);
-//apresentarDados(dadosTratados);
+gerarDadosSinteticos();
+apresentarDados(gerarDadosSinteticos());
+//--------------------------------------------------------------\\
