@@ -16,9 +16,7 @@ A implementação de inteligência artificial é fundamental para alcançar esse
 
 DATA: 02/11/2023 - xx/xx/xxxx
 
-OBSERVAÇÕES: implementação de uma inteligência artificial para prever possíveis comportamentos da chuva com base nos dados obtidos pelos sensores do Arduino. Imagine três sensores em linha; o primeiro sensor a esquerda detecta chuva; após ele, o sensor do meio detecta a chuva; isso significa que a chuva está indo para leste (para a direita). É assim que nosso programa irá deduzir a provável direção da chuva. Entretanto usaremos 5 sensores formando um quadrado. O sensor A estará no meio; o sensor B na ponta superior esquerda do quadrado; o sensor C na ponta direita superior do quadrado; o sensor D na ponta esquerda inferior do quadrado; o sensor E estará na ponta inferior direita.
-
-*/
+OBSERVAÇÕES: implementação de uma inteligência artificial para prever possíveis comportamentos da chuva com base nos dados obtidos pelos sensores do Arduino. Imagine três sensores em linha; o primeiro sensor a esquerda detecta chuva; após ele, o sensor do meio detecta a chuva; isso significa que a chuva está indo para leste (para a direita). É assim que nosso programa irá deduzir a provável direção da chuva. Entretanto usaremos 5 sensores formando um quadrado. O sensor A estará no meio; o sensor B na ponta superior esquerda do quadrado; o sensor C na ponta direita superior do quadrado; o sensor D na ponta esquerda inferior do quadrado; o sensor E estará na ponta inferior direita.*/
 // Biblioteca para gerar dados sintéticos. É necessário intalar a biblioteca com o comando "npm install faker". 
 const faker = require('faker');
 const { ne } = require('faker/lib/locales');
@@ -60,13 +58,13 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('D', 25);
         porcentChuva.set('E', 25);
 
-        if (dados.get('B') === 1) {
+        if (dados.get('B') === 1) { // A para B
             console.log('Noroeste');
-        } else if (dados.get('C') === 1) {
+        } else if (dados.get('C') === 1) { // A para C
             console.log('Nordeste');
-        } else if (dados.get('D') === 1) {
+        } else if (dados.get('D') === 1) { // A para D
             console.log('Suldoeste');
-        } else if (dados.get('E') === 1) {
+        } else if (dados.get('E') === 1) { // A para E
             console.log('Sudeste');
         }
     } else if (dados.get('B') === 1) {
@@ -75,11 +73,11 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('D', 28.3);
         porcentChuva.set('E', 15);
 
-        if (dados.get('C') === 1) {
+        if (dados.get('C') === 1) { // B para C
             console.log('Leste');
-        } else if (dados.get('D') === 1) {
+        } else if (dados.get('D') === 1) { // B para D
             console.log('Sul');
-        } else if (dados.get('A') === 1) {
+        } else if (dados.get('A') === 1) { // B para A
             console.log('Sudeste');
         }
     } else if (dados.get('C') === 1) {
@@ -88,11 +86,11 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('D', 15);
         porcentChuva.set('E', 28.3);
 
-        if (dados.get('A') === 1) {
+        if (dados.get('A') === 1) { // C para A
             console.log('Nordeste');
-        } else if (dados.get('B') === 1) {
+        } else if (dados.get('B') === 1) { // C para B
             console.log('Oeste');
-        } else if (dados.get('E') === 1) {
+        } else if (dados.get('E') === 1) { // C para E
             console.log('Sul');
         }
     } else if (dados.get('D') === 1) {
@@ -101,11 +99,11 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('C', 15);
         porcentChuva.set('E', 28.3);
 
-        if (dados.get('B') === 1) {
+        if (dados.get('B') === 1) { // D para B
             console.log('Norte');
-        } else if (dados.get('E') === 1) {
+        } else if (dados.get('E') === 1) { // D para E
             console.log('Leste');
-        } else if (dados.get('A') === 1) {
+        } else if (dados.get('A') === 1) { // D para A
             console.log('Nordeste');
         }
     } else if (dados.get('E') === 1) {
@@ -114,14 +112,20 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('C', 28.3);
         porcentChuva.set('D', 28.3);
 
-        if (dados.get('A') === 1) {
+        if (dados.get('A') === 1) { // E para A
             console.log('Noroeste');
-        } else if (dados.get('D') === 1) {
+        } else if (dados.get('D') === 1) { // E para D
             console.log('Oeste');
-        } else if (dados.get('C') === 1) {
+        } else if (dados.get('C') === 1) { // E para C
             console.log('Norte');
         }
     } else {
+        porcentChuva.set('A', 0);
+        porcentChuva.set('B', 0);
+        porcentChuva.set('C', 0);
+        porcentChuva.set('D', 0);
+        porcentChuva.set('E', 0);
+
         console.log('Sem chuva');
     }
 }
