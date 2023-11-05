@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap');
 *{font-family:"Lato" !important;}
-
+header{
+    border-bottom: 1px solid rgb(151, 151, 151);
+    /* box-shadow: 1px 1px 10px rgb(94, 94, 94); */
+}
+body{
+    background-color: #9BBEC8;
+}
 .my-nav{
-    
+    background-color: aliceblue;
+}
+.logo{
+    margin: 0px 0px 0px 50px;
+}
+.my-nav-items{
+    margin: 0px 50px 0px 0px;
+}
+.my-nav-items li{
+    margin: 010px;
+}
+.my-nav-items li:hover{
+  
 }
