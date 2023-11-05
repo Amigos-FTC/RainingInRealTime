@@ -21,6 +21,10 @@ body{
 .my-nav-items li{
     margin: 010px;
 }
+section{
+    width: 100%;
+    height: 100vh;
+}
 .main-section{
     width: 100%;
     height: 100vh;
@@ -31,6 +35,9 @@ body{
     align-items: center;
     flex-direction: column;
 
+}
+.about-section{
+    background-color: rgb(165, 165, 165);
 }
 
 .linha2{
