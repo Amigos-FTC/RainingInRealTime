@@ -1,2 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap');
-*{font-family: Lato;}
+*{font-family:"Lato" !important;}
+
+.my-nav{
+    
+}
