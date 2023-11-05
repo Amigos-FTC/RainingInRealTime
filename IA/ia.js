@@ -21,6 +21,7 @@ OBSERVAÇÕES: implementação de uma inteligência artificial para prever poss�
 */
 // Biblioteca para gerar dados sintéticos. É necessário intalar a biblioteca com o comando "npm install faker". 
 const faker = require('faker');
+const { ne } = require('faker/lib/locales');
 // Importe o módulo 'hashmap'
 const HashMap = require('hashmap');
 
@@ -46,8 +47,19 @@ function apresentarDados(dados) {
 
 // Main function - Função para interpretar os dados e prever a direção da chuva. 
 function previsaoDaChuva(dados) {
+    const porcentChuva = new HashMap();
+    porcentChuva.set('A', 0);
+    porcentChuva.set('B', 0);
+    porcentChuva.set('C', 0);
+    porcentChuva.set('D', 0);
+    porcentChuva.set('E', 0);
 
     if (dados.get('A') === 1) {
+        porcentChuva.set('B', 25);
+        porcentChuva.set('C', 25);
+        porcentChuva.set('D', 25);
+        porcentChuva.set('E', 25);
+
         if (dados.get('B') === 1) {
             console.log('Noroeste');
         } else if (dados.get('C') === 1) {
@@ -58,6 +70,11 @@ function previsaoDaChuva(dados) {
             console.log('Sudeste');
         }
     } else if (dados.get('B') === 1) {
+        porcentChuva.set('A', 28.3);
+        porcentChuva.set('C', 28.3);
+        porcentChuva.set('D', 28.3);
+        porcentChuva.set('E', 15);
+
         if (dados.get('C') === 1) {
             console.log('Leste');
         } else if (dados.get('D') === 1) {
@@ -66,6 +83,11 @@ function previsaoDaChuva(dados) {
             console.log('Sudeste');
         }
     } else if (dados.get('C') === 1) {
+        porcentChuva.set('A', 28.3);
+        porcentChuva.set('B', 28.3);
+        porcentChuva.set('D', 15);
+        porcentChuva.set('E', 28.3);
+
         if (dados.get('A') === 1) {
             console.log('Nordeste');
         } else if (dados.get('B') === 1) {
@@ -74,6 +96,11 @@ function previsaoDaChuva(dados) {
             console.log('Sul');
         }
     } else if (dados.get('D') === 1) {
+        porcentChuva.set('A', 28.3);
+        porcentChuva.set('B', 28.3);
+        porcentChuva.set('C', 15);
+        porcentChuva.set('E', 28.3);
+
         if (dados.get('B') === 1) {
             console.log('Norte');
         } else if (dados.get('E') === 1) {
@@ -82,6 +109,11 @@ function previsaoDaChuva(dados) {
             console.log('Nordeste');
         }
     } else if (dados.get('E') === 1) {
+        porcentChuva.set('A', 28.3);
+        porcentChuva.set('B', 15);
+        porcentChuva.set('C', 28.3);
+        porcentChuva.set('D', 28.3);
+
         if (dados.get('A') === 1) {
             console.log('Noroeste');
         } else if (dados.get('D') === 1) {
@@ -89,6 +121,8 @@ function previsaoDaChuva(dados) {
         } else if (dados.get('C') === 1) {
             console.log('Norte');
         }
+    } else {
+        console.log('Sem chuva');
     }
 }
 
