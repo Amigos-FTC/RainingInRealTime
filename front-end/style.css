@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap');
 *{font-family:"Lato" !important;}
 header{
+    width: 100%;
+    position: fixed;
     border-bottom: 1px solid rgb(151, 151, 151);
     /* box-shadow: 1px 1px 10px rgb(94, 94, 94); */
 }
@@ -19,6 +21,40 @@ body{
 .my-nav-items li{
     margin: 010px;
 }
-.my-nav-items li:hover{
-  
+.main-section{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(18, 129, 156);
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.linha2{
+    display: flex;
+    
+}
+.icon{
+    margin-inline: 15vw;
+    color: white;
+    font-size: 5rem;
+}
+#b{
+    color: rgb(255, 47, 47);
+}
+#a, #d, #c {
+    color: rgb(253, 253, 107);
+}
+@media screen and (max-width: 470px){
+    .icon{
+        margin-inline: 10vw;
+    }
+}
+@media screen and (max-width: 314px){
+    .icon{
+        margin-inline: 5vw;
+    }
 }
