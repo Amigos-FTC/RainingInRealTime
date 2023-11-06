@@ -28,9 +28,9 @@ function gerarDadosSinteticos() {
     const dadosSinteticos = new HashMap();
     dadosSinteticos.set('A', faker.random.number({ min: 0, max: 1 })) // Dado do sensor A (0 ou 1)
     dadosSinteticos.set('B', faker.random.number({ min: 0, max: 1 })) // Dado do sensor B (0 ou 1)
-    dadosSinteticos.set('C', faker.random.number({ min: 0, max: 1 })) // Dado do sensor C (0 ou 1)
-    dadosSinteticos.set('D', faker.random.number({ min: 0, max: 1 })) // Dado do sensor D (0 ou 1)
-    dadosSinteticos.set('E', faker.random.number({ min: 0, max: 1 })) // Dado do sensor E (0 ou 1)
+    dadosSinteticos.set('C', faker.random.number({ min: 0, max: 0 })) // Dado do sensor C (0 ou 1)
+    dadosSinteticos.set('D', faker.random.number({ min: 0, max: 0 })) // Dado do sensor D (0 ou 1)
+    dadosSinteticos.set('E', faker.random.number({ min: 0, max: 0 })) // Dado do sensor E (0 ou 1)
     return dadosSinteticos;
 }
 
@@ -59,12 +59,24 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('E', 25);
 
         if (dados.get('B') === 1) { // A para B
+            porcentChuva.set('C', 40);
+            porcentChuva.set('D', 40);
+            porcentChuva.set('E', 20);
             console.log('Noroeste');
         } else if (dados.get('C') === 1) { // A para C
+            porcentChuva.set('B', 40);
+            porcentChuva.set('D', 20);
+            porcentChuva.set('E', 40);
             console.log('Nordeste');
         } else if (dados.get('D') === 1) { // A para D
+            porcentChuva.set('B', 40);
+            porcentChuva.set('C', 20);
+            porcentChuva.set('E', 40);
             console.log('Suldoeste');
         } else if (dados.get('E') === 1) { // A para E
+            porcentChuva.set('B', 20);
+            porcentChuva.set('C', 40);
+            porcentChuva.set('D', 40);
             console.log('Sudeste');
         }
     } else if (dados.get('B') === 1) {
@@ -74,11 +86,61 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('E', 15);
 
         if (dados.get('C') === 1) { // B para C
+            porcentChuva.set('A', 70);
+            porcentChuva.set('D', 15);
+            porcentChuva.set('E', 15);
             console.log('Leste');
+            if (dados.get('D') === 1) { // B para C para D
+                porcentChuva.set('A', 80);
+                porcentChuva.set('E', 20);
+                console.log('Chuva variável no noroeste')
+            } else if (dados.get('E') === 1) { // B para C para E
+                porcentChuva.set('A', 80);
+                porcentChuva.set('D', 20);
+                console.log('Chuva variável no nordeste')
+            } else if (dados.get('A') === 1) { // B para C para A
+                porcentChuva.set('D', 80);
+                porcentChuva.set('E', 20);
+                console.log('Chuva variável no Norte')
+            }
+
+
         } else if (dados.get('D') === 1) { // B para D
+            porcentChuva.set('A', 70);
+            porcentChuva.set('C', 15);
+            porcentChuva.set('E', 15);
             console.log('Sul');
+            if (dados.get('C') === 1) { // B para D para C
+                porcentChuva.set('A', 80);
+                porcentChuva.set('E', 20);
+                console.log('Chuva variável no noroeste')
+            } else if (dados.get('E') === 1) { // B para D para E
+                porcentChuva.set('A', 80);
+                porcentChuva.set('C', 20);
+                console.log('Chuva variável no Sudoeste')
+            } else if (dados.get('A') === 1) { // B para D para A
+                porcentChuva.set('C', 80);
+                porcentChuva.set('E', 20);
+                console.log('Chuva variável no Oeste')
+            }
         } else if (dados.get('A') === 1) { // B para A
+            porcentChuva.set('C', 15);
+            porcentChuva.set('D', 15);
+            porcentChuva.set('E', 70);
             console.log('Sudeste');
+            if (dados.get('C') === 1) { // B para A para C
+                porcentChuva.set('D', 80);
+                porcentChuva.set('E', 20);
+                console.log('Chuva variável no Norte')
+            } else if (dados.get('D') === 1) { // B para A para D
+                porcentChuva.set('C', 80);
+                porcentChuva.set('E', 20);
+                console.log('Chuva variável no Oeste')
+            } else if (dados.get('E') === 1) { // B para A para E
+                porcentChuva.set('C', 50);
+                porcentChuva.set('D', 50);
+                console.log('Chuva variável no Nordeste')
+            }
         }
     } else if (dados.get('C') === 1) {
         porcentChuva.set('A', 28.3);
@@ -87,10 +149,19 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('E', 28.3);
 
         if (dados.get('A') === 1) { // C para A
+            porcentChuva.set('B', 15);
+            porcentChuva.set('D', 70);
+            porcentChuva.set('E', 15);
             console.log('Nordeste');
         } else if (dados.get('B') === 1) { // C para B
+            porcentChuva.set('A', 70);
+            porcentChuva.set('D', 15);
+            porcentChuva.set('E', 15);
             console.log('Oeste');
         } else if (dados.get('E') === 1) { // C para E
+            porcentChuva.set('A', 70);
+            porcentChuva.set('B', 15);
+            porcentChuva.set('D', 15);
             console.log('Sul');
         }
     } else if (dados.get('D') === 1) {
@@ -100,10 +171,19 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('E', 28.3);
 
         if (dados.get('B') === 1) { // D para B
+            porcentChuva.set('A', 70);
+            porcentChuva.set('C', 15);
+            porcentChuva.set('E', 15);
             console.log('Norte');
         } else if (dados.get('E') === 1) { // D para E
+            porcentChuva.set('A', 70);
+            porcentChuva.set('B', 15);
+            porcentChuva.set('C', 15);
             console.log('Leste');
         } else if (dados.get('A') === 1) { // D para A
+            porcentChuva.set('B', 15);
+            porcentChuva.set('C', 70);
+            porcentChuva.set('E', 15);
             console.log('Nordeste');
         }
     } else if (dados.get('E') === 1) {
@@ -113,10 +193,19 @@ function previsaoDaChuva(dados) {
         porcentChuva.set('D', 28.3);
 
         if (dados.get('A') === 1) { // E para A
+            porcentChuva.set('B', 70);
+            porcentChuva.set('C', 15);
+            porcentChuva.set('D', 15);
             console.log('Noroeste');
         } else if (dados.get('D') === 1) { // E para D
+            porcentChuva.set('A', 70);
+            porcentChuva.set('B', 15);
+            porcentChuva.set('C', 15);
             console.log('Oeste');
         } else if (dados.get('C') === 1) { // E para C
+            porcentChuva.set('A', 70);
+            porcentChuva.set('B', 15);
+            porcentChuva.set('D', 15);
             console.log('Norte');
         }
     } else {
@@ -132,6 +221,11 @@ function previsaoDaChuva(dados) {
 
 //--------------------------------------------------------------\\
 // Código principal
-gerarDadosSinteticos();
+
+for (let i = 0; i < 10; i++) {
+    gerarDadosSinteticos();
+    apresentarDados(gerarDadosSinteticos());
+    previsaoDaChuva(gerarDadosSinteticos());
+}
 
 //--------------------------------------------------------------\\
