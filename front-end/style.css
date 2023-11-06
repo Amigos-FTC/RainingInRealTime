@@ -55,6 +55,54 @@ section{
 #a, #d, #c {
     color: rgb(253, 253, 107);
 }
+
+.team-section {
+    margin-top: 100px;
+  }
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card img {
+    max-width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .card h3 {
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+  }
+  .texttime h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    width: 30%;
+    margin: 2px auto;
+  
+  }
+  
 @media screen and (max-width: 470px){
     .icon{
         margin-inline: 10vw;

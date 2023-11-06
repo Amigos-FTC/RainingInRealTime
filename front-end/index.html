@@ -1,82 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=7">
-  <link rel="shortcut icon" href="../assets/images/RRTonlyUmbrella.png" type="image/x-icon">
-  <!-- CSS do Bootstrap(SEMPRE ANTES DOS DEMAIS LINKS CSS)-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <!-- Bootstrap Icons -->
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <!-- CSS do Projeto -->
-    <link rel="stylesheet" href="style.css"> 
-    
-  
-  <title>RRT - Rain in Real Time</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/RRTonlyUmbrella.png"
+      type="image/x-icon"
+    />
+    <!-- CSS do Bootstrap(SEMPRE ANTES DOS DEMAIS LINKS CSS)-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- CSS do Projeto -->
+    <link rel="stylesheet" href="style.css" />
 
-</head>
-<body>
-  <header >
-    <nav class="navbar navbar-expand-lg  my-nav">
-      <div class="container-fluid my-container ">
-        <img class="logo" src="../assets/images/RRTonlyUmbrella.png" alt="RRT" width="50">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <title>RRT - Rain in Real Time</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg my-nav">
+        <div class="container-fluid my-container">
+          <img
+            class="logo"
+            src="../assets/images/RRTonlyUmbrella.png"
+            alt="RRT"
+            width="50"
+          />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
-          <ul class="navbar-nav my-nav-items" >
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#team">Time</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Sobre</a>
-            </li>
-          </ul>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav my-nav-items">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">Time</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">Sobre</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    
-  </header>
+      </nav>
+    </header>
 
-  <main>
-    <!-- Seção principal -->
-    <section class="container-fluid main-section" id="home">
-      <div class="linha1">
-        <i class="bi bi-broadcast-pin icon" id="b"></i>
-        <i class="bi bi-broadcast-pin icon" id="c"></i>
+    <main>
+      <!-- Seção principal -->
+      <section class="container-fluid main-section" id="home">
+        <div class="linha1">
+          <i class="bi bi-broadcast-pin icon" id="b"></i>
+          <i class="bi bi-broadcast-pin icon" id="c"></i>
+        </div>
+        <div class="linha2">
+          <i class="bi bi-broadcast-pin icon" id="a"></i>
+        </div>
+        <div class="linha3">
+          <i class="bi bi-broadcast-pin icon" id="d"></i>
+          <i class="bi bi-broadcast-pin icon" id="e"></i>
+        </div>
+      </section>
+      <!-- Seção do Time -->
+      <section class="container-fluid team-section" id="team">
+        <div class="container">
+          <div class="texttime">
+            <h1>TIME</h1>
+            <br />
+            <br />
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <img src="https://bit.ly/49nxNuL" alt="Zé Frota em end" />
+                <div class="card-body">
+                  <h2>Zé Frota em End</h2>
+                  <h3>O front dos meus sonhos</h3>
+                </div>
+              </div>
+            </div>
 
-      </div>
-      <div class="linha2">
-        <i class="bi bi-broadcast-pin icon" id="a" ></i>
-      </div>
-      <div class="linha3">
-        <i class="bi bi-broadcast-pin icon" id="d"></i>
-        <i class="bi bi-broadcast-pin icon" id="e"></i>
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <img src="https://bit.ly/49nxNuL" alt="Zé Pindola" />
+                <div class="card-body">
+                  <h2>Zé Pindola</h2>
+                  <h3>Vive tocando pra galera</h3>
+                </div>
+              </div>
+            </div>
 
-      </div>
-    </section>
-    <!-- Seção do Time -->
-    <section class="container-fluid team-section" id="team">
-    <!-- Seção Sobre -->
-    </section>
-    <section class="container-fluid about-section" id="about">
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <img src="https://bit.ly/49nxNuL" alt="Samm Faca Cega" />
+                <div class="card-body">
+                  <h2>Samm Faca Cega</h2>
+                  <h3>O Fornecedor 😐</h3>
+                </div>
+              </div>
+            </div>
 
-    </section>
-  </main>
-  <footer>
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <img src="https://bit.ly/49nxNuL" alt="Brunão do Galeto" />
+                <div class="card-body">
+                  <h2>Brunão do Galeto</h2>
+                  <h3>Suspeito da morte de Caião de Jesus</h3>
+                </div>
+              </div>
+            </div>
 
-  </footer>
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <img src="https://bit.ly/49nxNuL" alt="Caião de Jesus" />
+                <div class="card-body">
+                  <h2>Caião de Jesus</h2>
+                  <h3>Que a paz esteja convosco</h3>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <img src="https://bit.ly/49nxNuL" alt="Ralafel Jr." />
+                <div class="card-body">
+                  <h2>Ralafel Jr.</h2>
+                  <h3>Esqueci de cabar de esquecer de falar</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Seção Sobre -->
+      <section class="container-fluid about-section" id="about"></section>
+    </main>
+    <footer></footer>
 
-  
-  <!-- JS do Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-</body>
+    <!-- JS do Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
