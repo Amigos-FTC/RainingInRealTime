@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap');
 *{font-family:"Lato" !important;}
+body{
+    background-image: url(../assets/images/Fundo.png);
+}
 header{
     z-index: 1;
     width: 100%;
@@ -8,8 +11,9 @@ header{
     
     /* box-shadow: 1px 1px 10px rgb(94, 94, 94); */
 }
-body{
-    background-color: #9BBEC8;
+label{
+    font-size: 1vw;
+    color: white;
 }
 .my-nav{
     background-color: aliceblue;
@@ -21,7 +25,7 @@ body{
     margin: 0px 50px 0px 0px;
 }
 .my-nav-items li{
-    margin: 010px;
+    margin: 10px;
 }
 section{
     width: 100%;
@@ -30,7 +34,7 @@ section{
 .main-section{
     width: 100%;
     height: 100vh;
-    background-color: rgb(18, 129, 156);
+
     
     display:flex;
     justify-content: center;
@@ -38,21 +42,37 @@ section{
     flex-direction: column;
 
 }
-.about-section{
-    background-color: rgb(165, 165, 165);
-}
 
+.linha1{
+
+    display: flex;   
+}
 .linha2{
-    display: flex;
-    
+    display: flex;   
+}
+.linha3{
+    display: flex;   
+
 }
 .icon{
     margin-inline: 15vw;
     color: white;
     font-size: 5rem;
 }
+.padrao-mapa{
+    width:100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.padrao-imagem{
+    width: 10vw;
+}
 #b{
-    color: rgb(255, 47, 47);
+    font-size: 5vw;
+
 }
 #a, #d, #c {
     color: rgb(253, 253, 107);
