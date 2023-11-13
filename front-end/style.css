@@ -77,19 +77,48 @@ section{
 #a, #d, #c {
     color: rgb(253, 253, 107);
 }
-
-.team-section {
-
-    margin-top: 100px;
+/* Estilização do Time */
+.geral, .team-section h1, .team-section h2, .team-section p, .card-image {
+    display: flex;
+    justify-content: center;
   }
+  .team-section{
+    width: 60%;
+  }
+  .geral {
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+  
+  .team-section h1 {
+    display: flex;
+    font-size: 2.5vw;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid whitesmoke;
+    width: 30%;
+    margin: 1px auto;
+  }
+  
+  .team-section h2 {
+      font-size: 1.3vw;
+  }
+  
+  .team-section p {
+      font-size: 0.9vw;
+  }
+  
   .card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 5vw;
+      margin: 5px;
+      padding: 10px;
+      flex-basis: 30%;
+      box-shadow: 0 4px 6px 0 rgba(0,0,0,0.1);
+      transition: transform 0.2s;
   }
   
   .card img {
@@ -102,29 +131,37 @@ section{
   }
   
   .card:hover {
-    transform: translateY(-5px);
+      background-color: rgb(62,62,62);
+      color: white;
+      cursor: pointer;
+      transform: scale(1.02);
+      transition: all 0.2s ease;
   }
   
-  .card h2 {
-    font-size: 20px;
-    margin: 10px 0;
-    text-align: center;
+  @media screen and (max-width: 768px) {
+    .team-section h1 {
+      font-size: 4vw;
+      width: 60%;
+    }
+  
+    .team-section h2 {
+      font-size: 2vw;
+    }
+  
+    .team-section p {
+      font-size: 1.4vw;
+    }
+  
+    .card {
+      flex-basis: 42%;
+    }
+  
+    .card img {
+      max-width: 58%;
+    }
   }
   
-  .card h3 {
-    font-size: 16px;
-    color: #888;
-    text-align: center;
-  }
-  .texttime h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid black;
-    width: 30%;
-    margin: 2px auto;
-  
-  }
+
   
 @media screen and (max-width: 470px){
     .icon{
