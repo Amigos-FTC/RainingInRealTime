@@ -22,66 +22,39 @@ const faker = require('faker');
 const { ne } = require('faker/lib/locales');
 
 class IaPrevisaoChuva {
-    constructor() {
-      this.probChuvaA = 0;
-      this.probChuvaB = 0;
-      this.probChuvaC = 0;
-      this.probChuvaD = 0;
-      this.probChuvaE = 0;
-  
-      this.time = 10000; // Intervalo de 10 segundos
-      this.timer = null;
-    }
-  
-    leituraSensores() {
-      this.timer = setInterval(() => {
-        const sensorA = /* lógica para obter dados do sensor A */;
-        const sensorB = /* lógica para obter dados do sensor B */;
-        const sensorC = /* lógica para obter dados do sensor C */;
-        const sensorD = /* lógica para obter dados do sensor D */;
-        const sensorE = /* lógica para obter dados do sensor E */;
-  
-        this.atualizarProbabilidades(sensorA, sensorB, sensorC, sensorD, sensorE);
-        const previsao = this.fazerPrevisao();
-  
-        console.log('Leitura dos sensores:', { sensorA, sensorB, sensorC, sensorD, sensorE });
-        console.log('Previsão:', previsao);
-      }, this.intervaloLeitura);
-    }
-  
-    pararLeituraSensores() {
-      clearInterval(this.timer);
-    }
-  
-    atualizarProbabilidades(sensorA, sensorB, sensorC, sensorD, sensorE) {
-      if (sensorC && sensorB && !sensorA) {
-        this.probChuvaA = 0.8;
-      } else {
-        this.probChuvaA = 0.2;
-      }
-  
-      // Adicione mais lógica conforme necessário para outros sensores
-    }
-  
-    fazerPrevisao() {
-      const previsaoA = this.probChuvaA > 0.5;
-      const previsaoB = this.probChuvaB > 0.5;
-      const previsaoC = this.probChuvaC > 0.5;
-      const previsaoD = this.probChuvaD > 0.5;
-      const previsaoE = this.probChuvaE > 0.5;
-  
-      return { previsaoA, previsaoB, previsaoC, previsaoD, previsaoE };
-    }
+  constructor() {
+    this.probChuvaA = 0;
+    this.probChuvaB = 0;
+    this.probChuvaC = 0;
+    this.probChuvaD = 0;
+    this.probChuvaE = 0;
+
+    this.sessoesLidas = [];
   }
-  
+
+  leituraSensores(sensor1, sensor2, sensor3, sensor4, sensor5) {
+    const sessaoAtual = { sensorA: sensor1, sensorB: sensor2, sensorC: sensor3, sensorD: sensor4, sensorE: sensor5 };
+
+    this.sessoesLidas.push(sessaoAtual);
+
+    if (this.sessoesLidas.length > 3) {
+      this.sessoesLidas.shift(); // Remove a leitura mais antiga
+      // Mantém no máximo três sessões de leitura
+    }
+
+    this.analisarProb();
+    const previsao = this.previsao();
+
+    console.log('Leitura IA dos sensores:', sessaoAtual);
+    console.log('Histórico de leituras:', this.sessoesLidas);
+  }
+
+
+}
+
 //--------------------------------------------------------------\\
-// Código principal
-  // Exemplo de uso
-  const modeloIA = new IaPrevisaoChuva();
-  modeloIA.leituraSensores();
-  
-  // Para parar a leitura após um tempo (por exemplo, 30 segundos)
-  setTimeout(() => {
-    modeloIA.pararLeituraSensores();
-  }, 30000);
+// Exemplo de uso
+const modeloIA = new IaPrevisaoChuva();
+modeloIA.leituraSensores(true, false, true, false, false); // Substitua os valores pelos dados reais dos sensores
+modeloIA.leituraSensores(false, true, false, false, true); // Outra leitura de exemplo
 //--------------------------------------------------------------\\
