@@ -59,7 +59,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#team">Time</a>
+                <a class="nav-link" href="#nossoTime">Time</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">Sobre</a>
@@ -73,119 +73,105 @@
     <main>
       <!-- Seção principal -->
       <section class="container-fluid main-section" id="home">
-        <div class="linha1">
-          <div class="padrao-mapa">
-            <i class="bi bi-broadcast-pin icon" id="b"></i>
-            <label for="icon">Distrito B</label>
-            <img
-              class="padrao-imagem"
-              src="../assets/images/MAPA/MAPA1.png"
-              alt="mapa"
-            />
+        <div class="container-main">
+          <div class="linha1">
+            <div class="padrao-mapa">
+              <i class="bi bi-cloud-rain-fill icon" id="sensor2Icon"></i>
+              <label for="icon">Distrito B</label>
+              <i class="bi bi-house-fill"></i>
+            </div>
+            <div class="padrao-mapa">
+              <i class="bi bi-cloud-rain-fill icon" id="sensor3Icon"></i>
+              <label for="icon">Distrito C</label>
+              <i class="bi bi-house-fill"></i>
+            </div>
           </div>
-          <div class="padrao-mapa">
-            <i class="bi bi-broadcast-pin icon" id="b"></i>
-            <label for="icon">Distrito C</label>
-            <img
-              class="padrao-imagem"
-              src="../assets/images/MAPA/MAPA2.png"
-              alt="mapa"
-            />
+          <div class="linha2">
+            <div class="padrao-mapa">
+              <i class="bi bi-cloud-rain-fill icon" id="sensor1Icon"></i>
+              <label for="icon">Distrito A</label>
+              <i class="bi bi-house-fill"></i>
+            </div>
           </div>
-        </div>
-        <div class="linha2">
-          <div class="padrao-mapa">
-            <i class="bi bi-broadcast-pin icon" id="b"></i>
-            <label for="icon">Distrito A</label>
-            <img
-              class="padrao-imagem"
-              src="../assets/images/MAPA/MAPA3.png"
-              alt="mapa"
-            />
-          </div>
-        </div>
-        <div class="linha3">
-          <div class="padrao-mapa">
-            <i class="bi bi-broadcast-pin icon" id="b"></i>
-            <label for="icon">Distrito D</label>
-            <img
-              class="padrao-imagem"
-              src="../assets/images/MAPA/MAPA4.png"
-              alt="mapa"
-            />
-          </div>
-          <div class="padrao-mapa">
-            <i class="bi bi-broadcast-pin icon" id="b"></i>
-            <label for="icon">Distrito E</label>
-            <img
-              class="padrao-imagem"
-              src="../assets/images/MAPA/MAPA5.png"
-              alt="mapa"
-            />
+          <div class="linha3">
+            <div class="padrao-mapa">
+              <i class="bi  bi-cloud-rain-fill icon" id="sensor4Icon"></i>
+              <label for="icon">Distrito D</label>
+              <i class="bi bi-house-fill"></i>
+            </div>
+            <div class="padrao-mapa">
+              <i class="bi bi-cloud-rain-fill icon" id="sensor5Icon"></i>
+              <label for="icon">Distrito E</label>
+              <i class="bi bi-house-fill"></i>
+            </div>
           </div>
         </div>
+        
       </section>
       <!-- Seção do Time -->
       <section class="container-fluid team-section" id="team">
+        <!-- <br />
         <br />
         <br />
-        <br />
-        <br />
-        <div>
-          <h1>Nosso Time</h1>
-          <p style="color: whitesmoke; font-size: 2vw">Eagle Dev's</p>
+        <br /> Usar muitos brs nao é uma boa prática HTML-->
+        <div class="container-team">
+          <div>
+            <h1 id="nossoTime">Nosso Time</h1>
+            <p style="color: whitesmoke; font-size: 2vw">Eagle Dev's</p>
+          </div>
+  
+          <div class="container geral">
+            <div class="card">
+              <img src="https://bit.ly/49nxNuL" alt="Bruno" />
+              <div class="card-body">
+                <h2>Bruno Cardoso Monteiro</h2>
+                <p>Back-end & Arduino</p>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="../assets/images/TIME/Caio.jpg" alt="Caio" />
+              <div class="card-body">
+                <h2>Caio Chaves</h2>
+                <p>Gerenciamento de Recursos</p>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="../assets/images/TIME/Zé Carlos.jpg" alt="Zé Carlos" />
+              <div class="card-body">
+                <h2>José Carlos Neto</h2>
+                <p>Front-End & QA</p>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="../assets/images/TIME/Zé Henrique.jpg" alt="Zé Henrique" />
+              <div class="card-body">
+                <h2>José Henrique</h2>
+                <p>QA & Model</p>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="../assets/images/TIME/Samm.jpg" alt="Sammuel" />
+              <div class="card-body">
+                <h2>Sammuel Martins</h2>
+                <p>Back-end: IA</p>
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="../assets/images/TIME/Rafa.jpg" alt="Rafael" />
+              <div class="card-body">
+                <h2>Rafael Rodrigues</h2>
+                <p>Front-end & Model</p>
+              </div>
+            </div>
+          </div>
+        </section>
         </div>
-
-        <div class="container geral">
-          <div class="card">
-            <img src="https://bit.ly/49nxNuL" alt="Bruno" />
-            <div class="card-body">
-              <h2>Bruno Cardoso Monteiro</h2>
-              <p>Back-end & Arduino</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="../assets/images/TIME/Caio.jpg" alt="Caio" />
-            <div class="card-body">
-              <h2>Caio Chaves</h2>
-              <p>Gerenciamento de Recursos</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="../assets/images/TIME/Zé Carlos.jpg" alt="Zé Carlos" />
-            <div class="card-body">
-              <h2>José Carlos Neto</h2>
-              <p>Front-End & QA</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="../assets/images/TIME/Zé Henrique.jpg" alt="Zé Henrique" />
-            <div class="card-body">
-              <h2>José Henrique</h2>
-              <p>QA & Model</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="../assets/images/TIME/Samm.jpg" alt="Sammuel" />
-            <div class="card-body">
-              <h2>Sammuel Martins</h2>
-              <p>Back-end: IA</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="../assets/images/TIME/Rafa.jpg" alt="Rafael" />
-            <div class="card-body">
-              <h2>Rafael Rodrigues</h2>
-              <p>Front-end & Model</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        
       <!-- Seção Sobre -->
       <section class="container-fluid about-section" id="about"></section>
     </main>
