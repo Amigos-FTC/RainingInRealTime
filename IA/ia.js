@@ -18,16 +18,14 @@ DATA: 02/11/2023 - xx/xx/xxxx
 
 OBSERVAÇÕES: implementação de uma inteligência artificial para prever possíveis comportamentos da chuva com base nos dados obtidos pelos sensores do Arduino. Imagine três sensores em linha; o primeiro sensor a esquerda detecta chuva; após ele, o sensor do meio detecta a chuva; isso significa que a chuva está indo para leste (para a direita). É assim que nosso programa irá deduzir a provável direção da chuva. Entretanto usaremos 5 sensores formando um quadrado. O sensor A estará no meio; o sensor B na ponta superior esquerda do quadrado; o sensor C na ponta direita superior do quadrado; o sensor D na ponta esquerda inferior do quadrado; o sensor E estará na ponta inferior direita.*/
 // Biblioteca para gerar dados sintéticos. É necessário intalar a biblioteca com o comando "npm install faker". 
-const faker = require('faker');
-const { ne } = require('faker/lib/locales');
 
 class IaPrevisaoChuva {
   constructor() {
-    this.probChuvaA = 0;
-    this.probChuvaB = 0;
-    this.probChuvaC = 0;
-    this.probChuvaD = 0;
-    this.probChuvaE = 0;
+    this.probChuvaA = false;
+    this.probChuvaB = false;
+    this.probChuvaC = false;
+    this.probChuvaD = false;
+    this.probChuvaE = false;
 
     this.sessoesLidas = [];
   }
@@ -47,6 +45,108 @@ class IaPrevisaoChuva {
 
     console.log('Leitura IA dos sensores:', sessaoAtual);
     console.log('Histórico de leituras:', this.sessoesLidas);
+  }
+
+  analisarProb() {
+    this.probChuvaA = false;
+    this.probChuvaB = false;
+    this.probChuvaC = false;
+    this.probChuvaD = false;
+    this.probChuvaE = false;
+
+    if (this.sessoesLidas[0].sensorD === true || this.sessoesLidas[1].sensorD === true || this.sessoesLidas[2].sensorD === true) {
+      if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
+        this.probChuvaC = true;
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      } else {
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      }
+    }
+
+    else if (this.sessoesLidas[0].sensorC === true || this.sessoesLidas[1].sensorC === true || this.sessoesLidas[2].sensorC === true) {
+      if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
+        this.probChuvaD = true;
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      } else {
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      }
+    }
+
+    else if (this.sessoesLidas[0].sensorE === true || this.sessoesLidas[1].sensorE === true || this.sessoesLidas[2].sensorE === true) {
+      if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
+        this.probChuvaB = true;
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      } else {
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      }
+    }
+
+    else if (this.sessoesLidas[0].sensorE === true || this.sessoesLidas[1].sensorE === true || this.sessoesLidas[2].sensorE === true) {
+      if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
+        this.probChuvaB = true;
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      } else {
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      }
+    }
+    
+    else if (this.sessoesLidas[0].sensorB === true || this.sessoesLidas[1].sensorB === true || this.sessoesLidas[2].sensorB === true) {
+      if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
+        this.probChuvaE = true;
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      } else {
+        return this.probChuvaA;
+        return this.probChuvaB;
+        return this.probChuvaC;
+        return this.probChuvaD;
+        return this.probChuvaE;
+      }
+    }
+
+    else {
+      return this.probChuvaA;
+      return this.probChuvaB;
+      return this.probChuvaC;
+      return this.probChuvaD;
+      return this.probChuvaE;
+    }
+
   }
 
 
