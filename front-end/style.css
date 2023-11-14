@@ -6,7 +6,6 @@ body{
 header{
     z-index: 1;
     width: 100%;
-    position: fixed;
     border-bottom: 1px solid rgb(151, 151, 151);
     
     /* box-shadow: 1px 1px 10px rgb(94, 94, 94); */
@@ -32,14 +31,19 @@ section{
     height: 100vh;
 }
 .main-section{
+    box-sizing: border-box;
     width: 100%;
     height: 100vh;
 
-    
+
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+}
+.container-main{
+    width:100%;
 
 }
 
@@ -70,20 +74,29 @@ section{
 .padrao-imagem{
     width: 10vw;
 }
-#b{
+#sensor1Icon, #sensor2Icon, #sensor3Icon, #sensor4Icon, #sensor5Icon{
     font-size: 5vw;
+}
+ .bi-cloud-rain-fill{
+    opacity: 1;
+    font-size: 30px!important;
+    color: rgb(118, 200, 233);
+ }
+.bi-house-fill{
+    font-size: 50px;
+    color: white;
+} 
 
-}
-#a, #d, #c {
-    color: rgb(253, 253, 107);
-}
 /* Estilização do Time */
 .geral, .team-section h1, .team-section h2, .team-section p, .card-image {
     display: flex;
     justify-content: center;
   }
   .team-section{
-    width: 60%;
+
+    margin: 100px 0px;
+    width: 100%;
+
   }
   .geral {
       flex-wrap: wrap;
@@ -125,7 +138,7 @@ section{
     max-width: 50%;
     height: auto;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 100%;
     display: block;
     margin: 0 auto;
   }
@@ -139,8 +152,13 @@ section{
   }
   
   @media screen and (max-width: 768px) {
+
+    header{
+        position: absolute;
+    }
     .team-section h1 {
-      font-size: 4vw;
+        padding: 50px;
+      font-size: 6vw;
       width: 60%;
     }
   
