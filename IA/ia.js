@@ -29,29 +29,49 @@ class IaPrevisaoChuva {
   }
 
   leituraSensores(sensor1, sensor2, sensor3, sensor4, sensor5) {
+    if(sensor1 <= 799){
+      sensor1 = true;
+    } else {sensor1 = false;} 
+
+    if(sensor2 <= 799){
+      sensor2 = true;
+    } else {sensor2 = false;}
+
+    if(sensor3 <= 799){
+      sensor3 = true;
+    } else {sensor3 = false;}
+
+    if(sensor4 <= 799){
+      sensor4 = true;
+    } else {sensor4 = false;}
+
+    if(sensor5 <= 799){
+      sensor5 = true;
+    } else {sensor5 = false;}
+
     const sessaoAtual = { sensorA: sensor1, sensorB: sensor2, sensorC: sensor3, sensorD: sensor4, sensorE: sensor5 };
-
     this.sessoesLidas.push(sessaoAtual);
-
+    
     if (this.sessoesLidas.length > 3) {
       this.sessoesLidas.shift(); // Remove a leitura mais antiga
       // Mantém no máximo três sessões de leitura
     }
 
+    
     this.analisarProb();
     const previsao = this.previsao();
-
+    
     console.log('Leitura IA dos sensores:', sessaoAtual);
     console.log('Histórico de leituras:', this.sessoesLidas);
   }
-
+  
   analisarProb() {
     this.probChuvaA = false;
     this.probChuvaB = false;
     this.probChuvaC = false;
     this.probChuvaD = false;
     this.probChuvaE = false;
-
+    
     if (this.sessoesLidas[0].sensorD === true || this.sessoesLidas[1].sensorD === true || this.sessoesLidas[2].sensorD === true) {
       if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
         this.probChuvaC = true;
@@ -68,7 +88,7 @@ class IaPrevisaoChuva {
         return this.probChuvaE;
       }
     }
-
+    
     else if (this.sessoesLidas[0].sensorC === true || this.sessoesLidas[1].sensorC === true || this.sessoesLidas[2].sensorC === true) {
       if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
         this.probChuvaD = true;
@@ -85,7 +105,7 @@ class IaPrevisaoChuva {
         return this.probChuvaE;
       }
     }
-
+    
     else if (this.sessoesLidas[0].sensorE === true || this.sessoesLidas[1].sensorE === true || this.sessoesLidas[2].sensorE === true) {
       if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
         this.probChuvaB = true;
@@ -102,7 +122,7 @@ class IaPrevisaoChuva {
         return this.probChuvaE;
       }
     }
-
+    
     else if (this.sessoesLidas[0].sensorE === true || this.sessoesLidas[1].sensorE === true || this.sessoesLidas[2].sensorE === true) {
       if (this.sessoesLidas[0].sensorA === true || this.sessoesLidas[1].sensorA === true || this.sessoesLidas[2].sensorA === true) {
         this.probChuvaB = true;
@@ -136,7 +156,7 @@ class IaPrevisaoChuva {
         return this.probChuvaE;
       }
     }
-
+    
     else {
       return this.probChuvaA;
       return this.probChuvaB;
@@ -144,10 +164,10 @@ class IaPrevisaoChuva {
       return this.probChuvaD;
       return this.probChuvaE;
     }
-
+    
   }
-
-
+  
+  
 }
 
 //--------------------------------------------------------------\\
