@@ -15,6 +15,7 @@ Este código é parte de um projeto mais amplo chamado "RRT - Rain in Real Time"
 A implementação de inteligência artificial é fundamental para alcançar esse objetivo e proporcionar inclusão digital no cotidiano das pessoas.
 
 DATA: 02/11/2023 - xx/xx/xxxx */
+const socket = io('http://localhost:3001');
 
 
 class IaPrevisaoChuva {
@@ -63,9 +64,13 @@ class IaPrevisaoChuva {
     
     console.log('Leitura IA dos sensores:', sessaoAtual);
     console.log('Histórico de leituras:', this.sessoesLidas);
+    console.log('Previsão de chuva:', previsao);
   }
   
   analisarProb() {
+    
+ 
+
     this.probChuvaA = false;
     this.probChuvaB = false;
     this.probChuvaC = false;
@@ -165,6 +170,7 @@ class IaPrevisaoChuva {
       return this.probChuvaE;
     }
     
+    
   }
   
   
@@ -173,6 +179,23 @@ class IaPrevisaoChuva {
 //--------------------------------------------------------------\\
 // Exemplo de uso
 const modeloIA = new IaPrevisaoChuva();
-modeloIA.leituraSensores(true, false, true, false, false); // Substitua os valores pelos dados reais dos sensores
-modeloIA.leituraSensores(false, true, false, false, true); // Outra leitura de exemplo
-//--------------------------------------------------------------\\
+
+socket.on('dataFromSensor1', (data) => {
+  modeloIA.leituraSensores(data.sensor1, data.sensor2, data.sensor3, data.sensor4, data.sensor5);
+});
+
+socket.on('dataFromSensor2', (data) => {
+  modeloIA.leituraSensores(data.sensor1, data.sensor2, data.sensor3, data.sensor4, data.sensor5);
+});
+
+socket.on('dataFromSensor3', (data) => {
+  modeloIA.leituraSensores(data.sensor1, data.sensor2, data.sensor3, data.sensor4, data.sensor5);
+});
+
+socket.on('dataFromSensor4', (data) => {
+  modeloIA.leituraSensores(data.sensor1, data.sensor2, data.sensor3, data.sensor4, data.sensor5);
+});
+
+socket.on('dataFromSensor5', (data) => {
+  modeloIA.leituraSensores(data.sensor1, data.sensor2, data.sensor3, data.sensor4, data.sensor5);
+});

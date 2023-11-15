@@ -6,6 +6,8 @@ const http = require('http');
 const cors = require('cors');
 
 const app = express();
+
+// Permitir todas as origens (apenas para fins de desenvolvimento)
 app.use(cors());
 
 const port = new SerialPort({ path: 'COM3', baudRate: 9600 });
@@ -15,7 +17,8 @@ const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
     origin: '*',
-    methods: ['GET', 'POST'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
   },
 });
 
@@ -75,6 +78,6 @@ function parseSensorData(data, sensorData) {
   return sensorData;
 }
 
-httpServer.listen(3001, () => {
+httpServer.listen(3001, '0.0.0.0', () => {
   console.log('Servidor WebSocket rodando em http://localhost:3001');
 });
