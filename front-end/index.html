@@ -73,41 +73,46 @@
     <main>
       <!-- Seção principal -->
       <section class="container-fluid main-section" id="home">
-        <div class="container-main">
-          <div class="linha1">
+    <div class="container-main">
+        <div class="linha1">
             <div class="padrao-mapa">
-              <i class="bi bi-cloud-rain-fill icon" id="sensor2Icon"></i>
-              <label for="icon">Distrito B</label>
-              <i class="bi bi-house-fill"></i>
+                <i class="bi bi-cloud-rain-fill icon apagado" id="sensor2Icon"></i>
+                <label for="icon">Distrito B</label>
+                <span class="sensor-value" id="sensor2Value"></span>
+                <i class="bi bi-house-fill apagado" id="sensor2Icon2"></i>
             </div>
             <div class="padrao-mapa">
-              <i class="bi bi-cloud-rain-fill icon" id="sensor3Icon"></i>
-              <label for="icon">Distrito C</label>
-              <i class="bi bi-house-fill"></i>
+                <i class="bi bi-cloud-rain-fill icon apagado" id="sensor3Icon"></i>
+                <label for="icon">Distrito C</label>
+                <span class="sensor-value" id="sensor3Value"></span>
+                <i class="bi bi-house-fill apagado" id="sensor3Icon2"></i>
             </div>
-          </div>
-          <div class="linha2">
-            <div class="padrao-mapa">
-              <i class="bi bi-cloud-rain-fill icon" id="sensor1Icon"></i>
-              <label for="icon">Distrito A</label>
-              <i class="bi bi-house-fill"></i>
-            </div>
-          </div>
-          <div class="linha3">
-            <div class="padrao-mapa">
-              <i class="bi  bi-cloud-rain-fill icon" id="sensor4Icon"></i>
-              <label for="icon">Distrito D</label>
-              <i class="bi bi-house-fill"></i>
-            </div>
-            <div class="padrao-mapa">
-              <i class="bi bi-cloud-rain-fill icon" id="sensor5Icon"></i>
-              <label for="icon">Distrito E</label>
-              <i class="bi bi-house-fill"></i>
-            </div>
-          </div>
         </div>
-        
-      </section>
+        <div class="linha2">
+            <div class="padrao-mapa">
+                <i class="bi bi-cloud-rain-fill icon" id="sensor1Icon"></i>
+                <label for="icon">Distrito A</label>
+                <span class="sensor-value" id="sensor1Value"></span>
+                <i class="bi bi-house-fill" id="sensor1Icon2"></i>
+            </div>
+        </div>
+        <div class="linha3">
+            <div class="padrao-mapa">
+                <i class="bi  bi-cloud-rain-fill icon" id="sensor4Icon"></i>
+                <label for="icon">Distrito D</label>
+                <span class="sensor-value" id="sensor4Value"></span>
+                <i class="bi bi-house-fill" id="sensor4Icon2"></i>
+            </div>
+            <div class="padrao-mapa">
+                <i class="bi bi-cloud-rain-fill icon" id="sensor5Icon"></i>
+                <label for="icon">Distrito E</label>
+                <span class="sensor-value" id="sensor5Value"></span>
+                <i class="bi bi-house-fill" id="sensor5Icon2"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
       <!-- Seção do Time -->
       <section class="container-fluid team-section" id="team">
         <!-- <br />
@@ -188,5 +193,8 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="../back-end/script.js"></script>
+
   </body>
 </html>

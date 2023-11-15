@@ -191,3 +191,8 @@ section{
         margin-inline: 5vw;
     }
 }
+
+/* Adicione esta classe se o sensor estiver "apagado" (valor menor que 800) */
+.apagado {
+    opacity: 0.2; /* Ajuste a opacidade conforme necessário */
+}

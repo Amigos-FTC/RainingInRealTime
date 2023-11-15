@@ -1,33 +1,35 @@
-// Conecte-se ao servidor WebSocket
-const socket = io('http://localhost:3001'); // Substitua pelo endereço correto do servidor WebSocket
+// Conectar ao servidor WebSocket na URL especificada
+const socket = io('http://localhost:3001');
 
-// Lidar com eventos do servidor
+// Função para atualizar o estado do sensor com base no valor recebido
+function updateSensors(sensorId, sensorValue) {
+    const sensorIconElement = document.getElementById(`${sensorId}Icon`);
+    const sensorIconElement2 = document.getElementById(`${sensorId}Icon2`);
+
+    if (sensorIconElement && sensorIconElement2) {
+        sensorIconElement.style.opacity = sensorValue > 800 ? 0.2 : 1;
+        sensorIconElement2.style.opacity = sensorValue > 800 ? 0.2 : 1;
+    }
+
+    console.log(`Sensor ${sensorId} - Value: ${sensorValue}`);
+}
+
 socket.on('dataFromSensor1', (data) => {
-    // Processar os dados recebidos do Sensor 1
-    const sensor1Value = data;
-    document.getElementById('sensor1Value').textContent = `Sensor 1: ${sensor1Value}`;
+    updateSensors('sensor1', data);
 });
 
 socket.on('dataFromSensor2', (data) => {
-    // Processar os dados recebidos do Sensor 2
-    const sensor2Value = data;
-    document.getElementById('sensor2Value').textContent = `Sensor 2: ${sensor2Value}`;
+    updateSensors('sensor2', data);
 });
 
 socket.on('dataFromSensor3', (data) => {
-    // Processar os dados recebidos do Sensor 3
-    const sensor3Value = data;
-    document.getElementById('sensor3Value').textContent = `Sensor 3: ${sensor3Value}`;
+    updateSensors('sensor3', data);
 });
 
 socket.on('dataFromSensor4', (data) => {
-    // Processar os dados recebidos do Sensor 4
-    const sensor4Value = data;
-    document.getElementById('sensor4Value').textContent = `Sensor 4: ${sensor4Value}`;
+    updateSensors('sensor4', data);
 });
 
 socket.on('dataFromSensor5', (data) => {
-    // Processar os dados recebidos do Sensor 5
-    const sensor5Value = data;
-    document.getElementById('sensor5Value').textContent = `Sensor 5: ${sensor5Value}`;
+    updateSensors('sensor5', data);
 });
